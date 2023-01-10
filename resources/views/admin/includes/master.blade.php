@@ -165,7 +165,7 @@
                             </span> Country Management</a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown {{ (request()->is('admin-user-sponsor-details') || request()->is('admin-user-list')) ? 'open' : '' }}">
                             <a class="dropdown-toggle" href="javascript:void(0);">
                                 <span class="icon-holder">
                                     <i class="fa fa-user"></i>
@@ -176,11 +176,11 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="">Sponsor</a>
+                                <li class="{{ request()->is('admin-user-sponsor-details')  ? 'active' : '' }}">
+                                    <a href="{{ route('admin-user-sponsor-details') }}">Sponsor</a>
                                 </li>
-                                <li>
-                                    <a href="">Users</a>
+                                <li class="{{ request()->is('admin-user-list') ? 'active' : ''}}">
+                                    <a href="{{ route('admin-user-list') }}">Users</a>
                                 </li>
                                 <li>
                                     <a href="">Pack Purchase</a>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\auth\AdminLoginContoller;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\StaffController;
+use App\Http\Controllers\admin\UserController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -25,3 +26,9 @@ Route::post('admin-staff-store', [StaffController::class, 'staffStore'])->middle
 Route::get('admin-staff-edit/{staff_id}', [StaffController::class, 'staffEdit'])->middleware('auth')->name('admin-staff-edit/{staff_id}');
 Route::put('admin-staff-update/{staff_id}', [StaffController::class, 'staffUpdate'])->middleware('auth')->name('admin-staff-update');
 Route::delete('admin-staff-delete/{staff_id}', [StaffController::class, 'staffDelete'])->middleware('auth')->name('admin-staff-delete');
+
+
+// User Management
+Route::get('admin-user-sponsor-details', [UserController::class, 'sponsorDetails'])->middleware('auth')->name('admin-user-sponsor-details');
+Route::post('admin-user-sponsor-update', [UserController::class, 'sponsorDetailsUpdate'])->middleware('auth')->name('admin-user-sponsor-update');
+Route::get('admin-user-list', [UserController::class, 'userList'])->middleware('auth')->name('admin-user-list');
