@@ -23,7 +23,6 @@ class CreateMlmStaffTable extends Migration
             $table->integer('active_status');
             $table->timestamp('crcdt');
             $table->string('ip');
-            $table->timestamps();
         });
     }
 

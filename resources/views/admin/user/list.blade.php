@@ -45,7 +45,7 @@
         <!-- alert -->
         <div class="card">
             <div class="m-t-20 m-r-15">
-                <a href="{{ route('admin-staff-add') }}" class="btn btnbtn btn-success pull-right"><i class="fa fa-plus"></i> Add User</a>
+                <a href="{{ route('admin-user-add') }}" class="btn btnbtn btn-success pull-right"><i class="fa fa-plus"></i> Add User</a>
             </div>
             <div class="card-body">
                 <div class="table-overflow">
@@ -78,15 +78,16 @@
                                     </div>
                                 </td>
                                 <td>{{  ($loop->index + 1) }}</td>
-                                <td>{{  $user['user_image'] }}</td>
+                                <td>{!! $user['user_image'] =='' ? '<i class="fa fa-user fa-3x">':$user['user_image'] !!}</td>
                                 <td>{{  $user['user_fname'] }}</td>
                                 <td>{{  $user['user_profileid'] }}</td>
                                 <td>{{  $user['user_date'] }}</td>
-                                <td>{{  $user['user_fname'] }}</td>
+                                <td></td>
                                 <td>
                                     <a href=''><i class="fa fa-list" aria-hidden="true"></i></a>
                                 </td>
                                 <td class="text-center font-size-18">
+                                    <a href=''><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             @endforeach

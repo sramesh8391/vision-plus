@@ -32,3 +32,6 @@ Route::delete('admin-staff-delete/{staff_id}', [StaffController::class, 'staffDe
 Route::get('admin-user-sponsor-details', [UserController::class, 'sponsorDetails'])->middleware('auth')->name('admin-user-sponsor-details');
 Route::post('admin-user-sponsor-update', [UserController::class, 'sponsorDetailsUpdate'])->middleware('auth')->name('admin-user-sponsor-update');
 Route::get('admin-user-list', [UserController::class, 'userList'])->middleware('auth')->name('admin-user-list');
+Route::get('admin-user-add', [UserController::class, 'userAdd'])->middleware('auth')->name('admin-user-add');
+Route::post('admin-user-store', [UserController::class, 'userStore'])->middleware('auth')->name('admin-user-store');
+Route::post('admin-get-sponser-details', [UserController::class, 'getSponserById'])->middleware('auth')->name('admin-get-sponser-details');
